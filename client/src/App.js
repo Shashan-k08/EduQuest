@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import ExamScreen from "./components/ExamScreen";
+import ExamScreen from "./pages/ExamScreenPage";
 import "./App.css";
-import ConfirmationModal from "./components/modals/ConfirmationModal";
+import ConfirmationModal from "./modals/ConfirmationModal";
 import Report from "./components/Report";
-import TestSelection from "./components/TestSelection";
+import HomePage from "./pages/HomePage";
 import { ChakraProvider } from "@chakra-ui/react";
-import { testData } from "./components/data/testData";
+import { testData } from "./data/testData";
 import Header from "./components/Header";
 
 function App() {
@@ -65,7 +65,7 @@ function App() {
       <div className="App">
         <Header />
         {!selectedTest ? (
-          <TestSelection onSelectTest={handleTestSelect} />
+          <HomePage onSelectTest={handleTestSelect} />
         ) : showConfirmation ? (
           <ConfirmationModal onStart={startExam} />
         ) : examStatus === "" ? (

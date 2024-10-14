@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-import Timer from "./Timer";
-import WarningModal from "./modals/WarningModal";
-import QuestionScreen from "./QuestionScreen";
+import Timer from "../components/Timer";
+import WarningModal from "../modals/WarningModal";
+import QuestionScreen from "../components/QuestionScreen";
 
 const ExamScreen = ({
   timerDuration,
