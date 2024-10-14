@@ -1,38 +1,284 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 .App {
   text-align: center;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.logo {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 3rem;
+  font-weight: 800;
+  color: #3d535f;
+  letter-spacing: 0.2rem;
+  cursor: pointer;
+  /* text-transform: uppercase; */
+}
+
+.logo b {
+  font-size: 51px;
+  color: #7f00ff;
+}
+
+header {
+  height: 12vh;
+  line-height: 10vh;
+  box-shadow: -1px 11px 24px -11px rgba(0, 0, 0, 0.75);
+}
+header .container {
+  padding-top: 15px;
+}
+header ul li {
+  margin-left: 30px;
+}
+
+header ul li a {
+  transition: 0.5s;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+header ul li a:hover {
+  color: #00bfff;
+}
+
+header h2 {
+  display: inline;
+  vertical-align: top;
+  margin-left: 20px;
+}
+
+.home-btn {
+  padding: 18px 25px;
+  border-radius: 6px;
+  transition: 0.3s all ease;
+  cursor: pointer;
+  height: fit-content;
+  color: #00bfff;
+}
+.home-btn {
+  background: linear-gradient(145deg, #e2e8ec, #ffffff);
+  box-shadow: 4px 4px 8px #cbcbcb, -4px -4px 8px #ffffff;
+}
+.home-btn:hover {
+  background: #00bfff;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.open {
+  display: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.header.active {
+  height: 12vh;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  box-shadow: -1px 11px 24px -11px rgba(0, 0, 0, 0.75);
+  transition: 0.5s;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  /* glass blur using backdrop-filter */
+}
+
+@media (max-width: 768px) {
+  /* @media changes  to above styles on change in width */
+  header ul {
+    padding-top: 30px;
   }
-  to {
-    transform: rotate(360deg);
+  .nav-links-mobile {
+    position: absolute;
+    display: block;
+    list-style: none;
+    box-shadow: rgba(50, 50, 93, 0.23) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    left: 0;
+    top: 0;
+    transition: all 0.5s ease-in-out;
+    width: 60%;
+    height: 100vh;
+    background-color: white;
+    z-index: 888;
   }
+  header ul li {
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+    text-transform: uppercase;
+    line-height: 70px;
+  }
+
+  /* Reason why nav link won't appear on small screen initially */
+  header .link {
+    display: none;
+  }
+  /* on mobile screen button with open tag, ie, fa-bar button appears */
+  .close,
+  .open {
+    position: absolute;
+    top: 35px;
+    right: 20px;
+    color: #3d535f;
+    display: block;
+    font-size: 25px;
+    z-index: 999;
+  }
+  .close {
+    right: 45%;
+  }
+  .close.home-btn {
+    background: linear-gradient(145deg, #e2e8ec, #ffffff);
+    color: #3d535f;
+    border-radius: 50%;
+    padding: 0;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+  }
+  .header.active {
+    height: 11vh;
+  }
+}
+.container {
+  max-width: 95%;
+  margin: auto;
+}
+.d_flex {
+  display: flex; /* flex property sets flexible length for responsiveness*/
+  justify-content: space-between;
+}
+.f_flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+a {
+  text-decoration: none; /* links looks nice */
+  color: black;
+}
+.header li {
+  /* removes list icon */
+  list-style: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  border-color: none;
+}
+
+h1 {
+  color: #3c3e41;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 35px;
+}
+/* p {
+  color: #3c3e41;
+} */
+.text-center {
+  text-align: center;
+}
+.primary_color {
+  color: #00bfff;
+}
+span {
+  font-weight: bold;
+  margin: 5px;
+}
+textarea,
+input {
+  width: 100%;
+  padding: 20px;
+  border-radius: 5px;
+  outline: none;
+  border: 3px solid #c1dff3;
+  margin-bottom: 20px;
+}
+
+.modal {
+  background-color: white;
+  border-radius: 10px;
+  padding: 83px;
+  margin: 13% 26%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.start-btn {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.start-btn:hover {
+  background-color: #45a049;
+}
+
+.exam-screen {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  padding: 20px;
+}
+
+.submit-btn {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.submit-btn:hover {
+  background-color: #1e88e5;
+}
+
+.report {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin-top: 10rem;
+}
+
+.restart-btn {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.restart-btn:hover {
+  background-color: #e64a19;
+}
+
+.timer {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #333;
 }
